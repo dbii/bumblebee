@@ -98,6 +98,7 @@ defmodule Bumblebee.MixProject do
           Bumblebee.Text.Mbart,
           Bumblebee.Text.Mistral,
           Bumblebee.Text.Phi,
+          Bumblebee.Text.Phi3,
           Bumblebee.Text.Roberta,
           Bumblebee.Text.T5,
           Bumblebee.Vision.BlipVision,

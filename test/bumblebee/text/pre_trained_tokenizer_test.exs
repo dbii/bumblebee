@@ -317,6 +317,25 @@ defmodule Bumblebee.Text.PreTrainedTokenizerTest do
     )
   end
 
+  test ":llama for Phi3" do
+    assert {:ok, tokenizer} = Bumblebee.load_tokenizer({:hf, "microsoft/Phi-3-mini-128k-instruct"})
+
+    assert %Bumblebee.Text.PreTrainedTokenizer{type: :llama} = tokenizer
+
+    inputs = Bumblebee.apply_tokenizer(tokenizer, ["Hello everyobdy, how are you?"])
+
+    assert_equal(
+      inputs["input_ids"],
+      Nx.tensor([[15043, 1432, 711, 4518, 29892, 920, 526, 366, 29973]])
+      # Nx.tensor([[1, 15043, 1432, 711, 4518, 29892, 920, 526, 366, 29973]])
+    )
+
+    assert_equal(
+      inputs["attention_mask"],
+      Nx.tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1]])
+    )
+  end
+
   test ":mbart" do
     assert {:ok, tokenizer} = Bumblebee.load_tokenizer({:hf, "facebook/mbart-large-cc25"})
 

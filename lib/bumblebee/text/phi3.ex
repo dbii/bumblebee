@@ -11,7 +11,7 @@ defmodule Bumblebee.Text.Phi3 do
         """
       ],
       max_positions: [
-        default: 2048, # xxx
+        default: 131072,
         doc: """
         the vocabulary size of the position embedding. This corresponds to the maximum sequence
         length that this model can process. Typically this is set to a large value just in case,
@@ -27,7 +27,7 @@ defmodule Bumblebee.Text.Phi3 do
         doc: "the dimensionality of intermediate layers"
       ],
       num_blocks: [
-        default: 24, # xxx
+        default: 32,
         doc: "the number of Transformer blocks in the model"
       ],
       num_attention_heads: [

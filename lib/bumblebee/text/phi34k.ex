@@ -1,4 +1,4 @@
-defmodule Bumblebee.Text.Phi3 do
+defmodule Bumblebee.Text.Phi34k do
   alias Bumblebee.Shared
 
   options =
@@ -11,7 +11,7 @@ defmodule Bumblebee.Text.Phi3 do
         """
       ],
       max_positions: [
-        default: 131072,
+        default: 4096,
         doc: """
         the vocabulary size of the position embedding. This corresponds to the maximum sequence
         length that this model can process. Typically this is set to a large value just in case,
